@@ -2,6 +2,7 @@ open class Articulo(var nombre: String, var precio: Double) {
     private val id: Int = generarId()
 
     init {
+        require(precio<0.0){"El precio de $nombre no puede ser negativo."}
         totalArticulos++
     }
 
